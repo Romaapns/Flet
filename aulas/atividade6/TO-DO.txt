@@ -8,5 +8,3 @@
 8) Programar configurção de BORDAS de botão;
 9) Programar configurção de COR de botão;
 10) Programar configurção de SOMBRA de botão.
-
-PT
