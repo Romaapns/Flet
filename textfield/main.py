@@ -1,9 +1,9 @@
 import flet as ft
 
 def main(page: ft.Page):
-    # Função para atualizar os estilos do TextField
+    
     def atualizar_estilos(e):
-        # Atualizar as propriedades do TextField com base nas opções selecionadas
+        # Atualizar  TextField com base nas escolhas
         text_field.border_color = dropdown_border_color.value
         text_field.fill_color = dropdown_fill_color.value
         text_field.border_radius = int(dropdown_border_radius.value)
@@ -15,9 +15,9 @@ def main(page: ft.Page):
         text_field.cursor_color = dropdown_cursor_color.value
         page.update()
 
-    # textfield do topo
+    # textfield que sera mostrado aqui
     text_field = ft.TextField(
-        label="Meu TextField",
+        label="TextField",
         hint_text="Personalize-me!",
         width=400,
         border_radius=5,
@@ -28,10 +28,10 @@ def main(page: ft.Page):
 
     #  estilizar o TextField
     dropdown_border_color = ft.Dropdown(
-        label="Cor da Borda",
+        label="Cor Borda",
         options=[
             ft.dropdown.Option("blue", "Azul"),
-            ft.dropdown.Option("red", "Vermelho"),
+            ft.dropdown.Option("purple", "Roxo"),
             ft.dropdown.Option("green", "Verde"),
             ft.dropdown.Option("black", "Preto"),
         ],
@@ -40,7 +40,7 @@ def main(page: ft.Page):
     )
 
     dropdown_fill_color = ft.Dropdown(
-        label="Cor de Preenchimento",
+        label="Cor Preenchimento",
         options=[
             ft.dropdown.Option("lightgray", "Cinza Claro"),
             ft.dropdown.Option("white", "Branco"),
@@ -52,7 +52,7 @@ def main(page: ft.Page):
     )
 
     dropdown_border_radius = ft.Dropdown(
-        label="Arredondamento da Borda (px)",
+        label="Arredondamento Borda (px)",
         options=[
             ft.dropdown.Option("0", "Sem borda arredondada"),
             ft.dropdown.Option("5", "5px"),
@@ -64,19 +64,20 @@ def main(page: ft.Page):
     )
 
     dropdown_text_size = ft.Dropdown(
-        label="Tamanho do Texto (px)",
+        label="Tamanho Texto (px)",
         options=[
             ft.dropdown.Option("12", "12px"),
             ft.dropdown.Option("16", "16px"),
             ft.dropdown.Option("20", "20px"),
             ft.dropdown.Option("24", "24px"),
+             ft.dropdown.Option("32", "32px"),
         ],
         value="16",
         on_change=atualizar_estilos,
     )
 
     dropdown_cursor_color = ft.Dropdown(
-        label="Cor do Cursor",
+        label="Cor Cursor",
         options=[
             ft.dropdown.Option("black", "Preto"),
             ft.dropdown.Option("blue", "Azul"),
@@ -88,19 +89,19 @@ def main(page: ft.Page):
     )
 
     dropdown_font_family = ft.Dropdown(
-        label="Fonte do Texto",
+        label="Fonte Texto",
         options=[
             ft.dropdown.Option("Arial", "Arial"),
             ft.dropdown.Option("Courier New", "Courier New"),
             ft.dropdown.Option("Times New Roman", "Times New Roman"),
-            ft.dropdown.Option("Verdana", "Verdana"),
+            
         ],
         value="Arial",
         on_change=atualizar_estilos,
     )
 
     dropdown_text_color = ft.Dropdown(
-        label="Cor do Texto",
+        label="Cor Texto",
         options=[
             ft.dropdown.Option("black", "Preto"),
             ft.dropdown.Option("blue", "Azul"),
@@ -112,7 +113,6 @@ def main(page: ft.Page):
         on_change=atualizar_estilos,
     )
 
-    # Layout principal
     page.title = "Editor de TextField com Fontes, Cores e Tamanhos"
     page.add(
         text_field,
