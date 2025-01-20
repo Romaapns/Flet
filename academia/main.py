@@ -187,7 +187,7 @@ def main(page: ft.Page):
         )
         page.update()
 
-    # Tela inicial
+
     def criar_perfil(e):
         if nome_input.value and idade_input.value:
             exibir_menu()
@@ -196,12 +196,12 @@ def main(page: ft.Page):
             page.snack_bar.open = True
             page.update()
 
-    # Inputs para nome e idade
+
     nome_input = ft.TextField(label="Nome", autofocus=True, color="purple")
     idade_input = ft.TextField(label="Idade", keyboard_type=ft.KeyboardType.NUMBER, color="purple")
     confirmar_button = ft.ElevatedButton("Confirmar", on_click=criar_perfil, bgcolor="purple", color="white")
     
-    # Layout de criação do perfil
+
     page.controls.append(header)
     page.controls.append(nome_input)
     page.controls.append(idade_input)
